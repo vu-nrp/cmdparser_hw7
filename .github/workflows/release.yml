@@ -1,4 +1,4 @@
-name: 'C++ CI command parser hw#7'
+name: 'C++ CI command parser (bulk) hw#7'
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
       - run: cmake --build . --target package
 #      # Run Google Tests
 #      - name: 'Run GTest'
-#        run: /home/runner/work/cmdparser_hw7/cmdparser_hw7/cmdparser_test2
+#        run: /home/runner/work/cmdparser_hw7/cmdparser_hw7/bulk_test2
       # Setup Pages
       - name: 'Setup Pages'
         uses: actions/configure-pages@v4
@@ -52,7 +52,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 #      # Run App Once
 #      - name: 'Run App Once'
-#        run: /home/runner/work/cmdparser_hw7/cmdparser_hw7/cmdparser
+#        run: /home/runner/work/cmdparser_hw7/cmdparser_hw7/bulk
       # Create Release Step
       - name: 'Create Release Step'
         id: create_release
@@ -72,6 +72,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./cmdparser-0.0.${{ github.run_number }}-Linux.deb
-          asset_name: cmdparser-0.0.${{ github.run_number }}-Linux.deb
+          asset_path: ./bulk-0.0.${{ github.run_number }}-Linux.deb
+          asset_name: bulk-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
