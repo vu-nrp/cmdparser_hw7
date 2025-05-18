@@ -1,4 +1,6 @@
 #include <ctime>
+//#include <thread>
+//#include <chrono>
 #include <iostream>
 #include "utils.h"
 
@@ -68,17 +70,21 @@ int main(int argc, char **argv)
                 }
 
                 commands.push_back(line);
+                // накопили N команд, печатаем и начинаем накапливать с начала
                 if (commands.size() == N) {
-                    // накопили N команд, печатаем и начинаем накапливать с начала
-                    printAndClearCommands(startTime, commands);
+                    // если достаточно команд и это не динамический блок
+                    if (isDynActivated == 0) {
+                        printAndClearCommands(startTime, commands);
+                    }
                 }
             }
+
+//            // testing
+//            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
 
-        // конец ввода команд
-        if (isDynActivated != 0) {
-            // динамический блок так и не закончился - пропускаем
-        } else {
+        // конец ввода команд и это не динамический блок
+        if (isDynActivated == 0) {
             printAndClearCommands(startTime, commands);
         }
     } catch (std::invalid_argument const& ex) {

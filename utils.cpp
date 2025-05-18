@@ -24,7 +24,7 @@ void printAndClearCommands(const size_t &startTime, CommandsPack &pack)
         std::cout << "bulk: " << packToString(", ") << std::endl;
 
         // печать в файл
-        static const auto fmt = "./log/bulk%.10zu.log";
+        static const auto fmt = "./bulk%.10zu.log";
         static const int sz = std::snprintf(nullptr, 0, fmt, startTime);
         std::string fileName(sz, '\0');
         std::sprintf(fileName.data(), fmt, startTime);
