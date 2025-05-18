@@ -3,7 +3,7 @@
 #include "utils.h"
 
 //!
-//! \brief printAndClearCommands -
+//! \brief printAndClearCommands - print command bloc content and clear block
 //! \param startTime - incoming time of first command in seconds from epoch
 //! \param pack - block of command, will be cleared after printing
 //!
