@@ -6,6 +6,5 @@
 //!
 //! CommandsPack - block of command
 //!
-
 using CommandsPack = std::vector<std::string>;
 

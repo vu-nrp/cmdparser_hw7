@@ -11,8 +11,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(${PROJECT_NAME}
     main.cpp
     types.h
-    utils.h
-    utils.cpp
+    publisher.h
+    publisher.cpp
+    observer.h
+    observer.cpp
+    commandparser.h
+    commandparser.cpp
 )
 
 set(CPACK_GENERATOR DEB)
